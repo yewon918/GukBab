@@ -13,9 +13,9 @@ public class MenuActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton MBtn = (JButton)e.getSource();
+		//JButton MBtn = (JButton)e.getSource(); //서브메뉴?
 		DefaultTableModel m = (DefaultTableModel)mp.table.getModel();
-		for(int i=0;i<16;i++)
+		for(int i=0;i<2;i++)
 			m.addRow(new Object[]{mp.menu[i],mp.count,mp.price[i]});
 	}
 }

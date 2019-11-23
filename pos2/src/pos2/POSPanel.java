@@ -90,13 +90,12 @@ public class POSPanel extends JPanel {
 	public POSPanel() {
 		setLayout(null);
 		setBackground(Color.GREEN); 
-		MenuBtn mbtn = new MenuBtn();
-		MGRBtn mgrtn = new MGRBtn();
-		StrBtn sbtn = new StrBtn(); //踰꾪듉諛곗뿴
+		MenuBtn mbtn = new MenuBtn(); //메뉴버튼
+		MGRBtn mgrtn = new MGRBtn(); //판매관리
+		StrBtn sbtn = new StrBtn(); //쿠폰~결제 버튼
 		
 		Screen sc = new Screen(); //사용자의 화면을 나타냄
 		
-		//�쟾泥댄솕硫� �뀒�몢由� �젅�씠�븘�썐, 珥덈줉�깋�
 		tf.setSize(450, 70); //가격 표시 창
 		tf.setLocation(50, 480); //가로 위치, 세로 위치
 		add(tf);
@@ -164,7 +163,7 @@ public class POSPanel extends JPanel {
 				//JButton MBtn = (JButton)e.getSource();
 				DefaultTableModel m = (DefaultTableModel)table.getModel();
 				
-				m.setRowCount(0); //모델 내의 행수 설정
+				m.setRowCount(0); //남길수있는 행의 개수
 				tf.setText(String.valueOf(""));
 			}
 		});
