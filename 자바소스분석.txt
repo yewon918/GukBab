@@ -1,0 +1,33 @@
+*****POSMain.java*****
+pos Frame을 호출해서 사용
+
+*****POSFrame.java*****
+POSPannel 호출
+
+*****POSPanel.java*****
+java.awt - JFrame, JDialog, JApplet //swing?
+JPanel- 조각난 프레임
+각종 레이아웃, UI 배치를 다르게 할 수 있게 함
+JFrame - 메인프레임
+JPanel- 보조프레임
+JLabel, UI- 기능 수행 컴포넌트
+
+JButton - 버튼 생성
+JTextField- 또다른 컨트롤 ui, 인풋박스, 문자열 한 줄을 입력받음
+enter입력시 action
+JTextField(int cols/ string text/ 둘다) - 입력창 열, 개수가 cols/ text 문자열로 초기화된 텍스트필드
+-입력창 열 개수는 cols, text 문자열로 초기화 된 텍스트 필드
+
+*ActionEvent - java.awt.event.*;
+ActionListener()- 인터페이스
+ActionListener() - 발생하는 이벤트를 생성 //actionPerformed(ActionEvent)메소드를 이용해 처리
+addActionListener(new ActionListener)
+getSource() 메소드 - 이벤트를 발생시킨 이벤트 소스 객체를 얻어온다 //위치를 얻어옴
+
+*defaultTableMode((Object [][] data, Object [] columnNames) - JTable객체를 생성할때 리모콘 세팅하는 것과 같음
+데이터의 입출력 가능하게 함
+ -defaultTableModel을 구축해 data와 columnNames를 setDataVector 메소드에 건내주어 테이블 초기화
+JTable에 담아야할 것을 리모콘 처럼 세팅한 뒤 JTable에 넣는 것과 같다 
+ -테이블 정보 변경할때 사용
+addRow - 모델 테이블의 마지막에 행 추가됨
+table.setvalueat(새로운 값, 선택된 줄, col) 
