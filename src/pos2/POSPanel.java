@@ -1,11 +1,28 @@
 package pos2;
 
-import java.sql.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class POSPanel extends JPanel {
    JButton[] MBtn = new JButton[9];
@@ -50,7 +67,7 @@ public class POSPanel extends JPanel {
    class MenuBtn extends JPanel {
       MenuBtn() {
          setLayout(new GridLayout(3, 3, 3, 3));
-         setBackground(Color.white); //버튼 배경 색
+         setBackground(Color.WHITE);
          ImageIcon[] img = new ImageIcon[9];
          img[0] = new ImageIcon("C:\\Users\\김예원\\Desktop\\sun.jpg");
          img[1] = new ImageIcon("C:\\Users\\김예원\\Desktop\\soo.jpg");                                                                                 
@@ -246,7 +263,7 @@ public class POSPanel extends JPanel {
             try {
                Class.forName("com.mysql.cj.jdbc.Driver");
                String url = "jdbc:mysql://localhost/db?serverTimezone=UTC";
-               conn = DriverManager.getConnection(url, "root", "dhwns906330!");
+               conn = DriverManager.getConnection(url, "root", "dPdnjs0918!");
 
                stmt = conn.createStatement();
                stmt.executeUpdate("update sundae set count= count +" + sundae);
@@ -266,7 +283,7 @@ public class POSPanel extends JPanel {
                m.setRowCount(0);
                tf.setText(String.valueOf(""));
             } catch (ClassNotFoundException e1) {
-               System.out.println("DB?��?�� ?��?��");
+               System.out.println("DB연동 실패");
             } catch (SQLException e1) {
                System.out.println("error : " + e1);
             } finally {
@@ -289,7 +306,7 @@ public class POSPanel extends JPanel {
                Class.forName("com.mysql.cj.jdbc.Driver");
                String url = "jdbc:mysql://localhost/db?serverTimezone=UTC";
 
-               conn = DriverManager.getConnection(url, "root", "dhwns906330!");
+               conn = DriverManager.getConnection(url, "root", "dPdnjs0918!");
                stmt = conn.createStatement();
 
                LOGIN lg = new LOGIN();
@@ -300,8 +317,9 @@ public class POSPanel extends JPanel {
 
                String name[] = { "품목명", "판매횟수" };
                String data[][] = { { "                      순대국밥", "" }, { "                      뼈해장국", "" },
-                     { "                      수육국밥", "" }, { "                      돼지국밥", "" },
-                     { "                      누적매출", "" } };
+                     { "                      수육국밥", "" }, { "                      돼지국밥", "" },{ "                      콜라", "" },
+                     { "                      환타", "" },                     { "                      사이다", "" },{ "                      소주", "" },
+                     { "                      맥주", "" },                     { "                      누적매출", "" } };
 
                DefaultTableModel model = new DefaultTableModel(data, name);
 
@@ -408,13 +426,13 @@ public class POSPanel extends JPanel {
             model.setValueAt(srs.getInt("count") + " 개", 6, 1);
             break;
          } else if (col1.equals("soju_count")) {
-            model.setValueAt(srs.getInt("count") + "병", 7, 1);
+            model.setValueAt(srs.getInt("count") + " 병 ", 7, 1);
             break;
          } else if (col1.equals("beer_count")) {
-            model.setValueAt(srs.getInt("count") + "병", 8, 1);
+            model.setValueAt(srs.getInt("count") + " 병 ", 8, 1);
             break;
          } else if (col1.equals("profit")) {
-            model.setValueAt(srs.getInt("profit") + "원", 9, 1);
+            model.setValueAt(srs.getInt("profit") + " 원 ", 9, 1);
             break;
          } else
             System.out.println();
