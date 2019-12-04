@@ -283,7 +283,11 @@ public class POSPanel extends JPanel {
                m.setRowCount(0);
                tf.setText(String.valueOf(""));
             } catch (ClassNotFoundException e1) {
+<<<<<<< HEAD
                System.out.println("DB연동 실패");
+=======
+               System.out.println("DB 연동에 실패했습니다.");
+>>>>>>> a074180ed57ac8f40059e04523546e0de9c7e767
             } catch (SQLException e1) {
                System.out.println("error : " + e1);
             } finally {
