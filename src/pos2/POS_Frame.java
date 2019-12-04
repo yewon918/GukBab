@@ -1,5 +1,7 @@
 package pos2;
 
+import java.awt.Color;
+
 import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -13,7 +15,7 @@ public class POS_Frame extends JFrame {
 		setTitle("¶ß°Å¿ö Á×¾îµµ ±¹¹ä");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(new POSPanel());
-
+		
 		setSize(1300,700);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		//scroll = new JScrollPane();
