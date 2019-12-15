@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/pos2/POSPanel.java=UTF-8
+=======
+encoding//src/pos/POSPanel.java=UTF-8
+>>>>>>> d6d6eca949dd0532e5a5fde35277ddfba3d271a4
