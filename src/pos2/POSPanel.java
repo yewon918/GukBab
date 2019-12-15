@@ -55,7 +55,7 @@ public class POSPanel extends JPanel {
          setBackground(new Color(255, 255, 204));
          DefaultTableModel m = (DefaultTableModel) table.getModel();
          table.setRowHeight(40);
-         table.getTableHeader().setFont(new Font("궁서", Font.BOLD, 15));
+         table.getTableHeader().setFont(new Font("휴먼편지체", Font.BOLD, 15));
          table.getTableHeader().setBackground(Color.white);
          table.setBackground(Color.orange);
          table.setGridColor(Color.white);
@@ -69,15 +69,15 @@ public class POSPanel extends JPanel {
          setLayout(new GridLayout(3, 3, 3, 3));
          setBackground(Color.WHITE);
          ImageIcon[] img = new ImageIcon[9];
-         img[0] = new ImageIcon("C:\\Users\\김예원\\Desktop\\sun.jpg");
-         img[1] = new ImageIcon("C:\\Users\\김예원\\Desktop\\soo.jpg");                                                                                 
-         img[2] = new ImageIcon("C:\\Users\\김예원\\Desktop\\bone.jpg");
-         img[3] = new ImageIcon("C:\\Users\\김예원\\Desktop\\pig.jpg");
-         img[4] = new ImageIcon("C:\\Users\\김예원\\Desktop\\coke.jpg");
-         img[5] = new ImageIcon("C:\\Users\\김예원\\Desktop\\cider.jpg");
-         img[6] = new ImageIcon("C:\\Users\\김예원\\Desktop\\fanta.jpg");
-         img[7] = new ImageIcon("C:\\Users\\김예원\\Desktop\\soju.jpg");
-         img[8] = new ImageIcon("C:\\Users\\김예원\\Desktop\\beer.jpg");
+         img[0] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\sun.jpg");
+         img[1] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\soo.jpg");                                                                                 
+         img[2] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\bone.jpg");
+         img[3] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\pig.jpg");
+         img[4] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\coke.jpg");
+         img[5] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\cider.jpg");
+         img[6] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\fanta.jpg");
+         img[7] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\soju.jpg");
+         img[8] = new ImageIcon("C:\\Users\\김예원\\Desktop\\img\\beer.jpg");
 
          for (int i = 0; i < img.length; i++) {
             icon[i] = img[i].getImage();
@@ -101,6 +101,7 @@ public class POSPanel extends JPanel {
          for (int i = 0; i < MGR.length; i++) {
             MGRtn[i] = new JButton(MGR[i]);
             MGRtn[i].setBackground(new Color(230, 230, 0));
+            MGRtn[i].setFont(new Font("휴먼편지체", Font.BOLD, 30));
             add(MGRtn[i]);
          }
       }
@@ -114,6 +115,7 @@ public class POSPanel extends JPanel {
          for (int i = 0; i < Str.length; i++) {
             SBtn[i] = new JButton(Str[i]);
             SBtn[i].setBackground(new Color(230, 230, 0));
+            SBtn[i].setFont(new Font("휴먼편지체", Font.BOLD, 20));
             add(SBtn[i]);
          }
       }
@@ -283,11 +285,7 @@ public class POSPanel extends JPanel {
                m.setRowCount(0);
                tf.setText(String.valueOf(""));
             } catch (ClassNotFoundException e1) {
-<<<<<<< HEAD
                System.out.println("DB연동 실패");
-=======
-               System.out.println("DB 연동에 실패했습니다.");
->>>>>>> a074180ed57ac8f40059e04523546e0de9c7e767
             } catch (SQLException e1) {
                System.out.println("error : " + e1);
             } finally {
